@@ -22,7 +22,7 @@
         methods: {
 			changeStatus(status) {
 				if (!this.server) return;
-				serverBus.$emit('serverChanged', Object.assign(this.server, { status: status }));
+				serverBus.$emit('serverChanged', Object.assign({}, this.server, { status: status }));
 			}
         },
         created() {

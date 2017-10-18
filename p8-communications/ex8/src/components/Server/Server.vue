@@ -3,7 +3,7 @@
             class="list-group-item"
             style="cursor: pointer"
             @click="selectServer">
-		Server {{ id }}
+		Server {{ id }} is currently <span :class="'label label-' + labelType">{{ status }}</span>
     </li>
 </template>
 
@@ -19,8 +19,17 @@
 					id: this.id,
 					status: this.status
 				});
-            }
-        }
+            },
+        },
+		computed: {
+			labelType: function() {
+				switch (this.status.toLowerCase()) {
+					case 'normal': return 'success';
+					case 'critical': return 'danger';
+				}
+				return 'default';
+			}
+		}
     }
 </script>
 

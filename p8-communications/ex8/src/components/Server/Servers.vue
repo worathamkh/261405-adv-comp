@@ -19,6 +19,7 @@
 
 <script>
 import Server from './Server.vue';
+import { serverBus } from '../../main';
 
 export default {
     data: function() {
@@ -37,13 +38,13 @@ export default {
     components: {
         appServer: Server
     },
-	created: {
-		serverChanged(props) {
+	created() {
+		serverBus.$on('serverChanged', (props) => {
 			let { id, status } = props;
 			let pos = this.servers.findIndex(s => s.id === id);
 			if (pos === -1) return;
 			this.servers[pos].status = status;
-		}
+		});
 	}
 }
 </script>
