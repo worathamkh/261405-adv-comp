@@ -12,6 +12,7 @@ import Header from './Header.vue'
 import Form from './Form.vue'
 import Bookmarks from './Bookmarks.vue'
 import Footer from './Footer.vue'
+// import { eventBus } from '../main'
 
 export default {
   name: 'Bookmarker',
@@ -20,6 +21,11 @@ export default {
     'app-form': Form,
     'app-bookmarks': Bookmarks,
     'app-footer': Footer
+  },
+  created () {
+    // eventBus.$on('bookmarkCreated', (data) => {
+    //   // console.log('bookmarkCreated received with', JSON.stringify(data))
+    // })
   }
 }
 </script>
