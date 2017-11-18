@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  .main.container
+    .row
+      .col-md-6.col-md-offset-3
+        h1.display-4.m-b-2 Add Customer
+
+        // register form
+        form(method='POST' action='/user')
+          div.form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', placeholder='first and last' name='name')
+          div.form-group
+            label(for='username') Username:
+            input#username.form-control(type='text', placeholder='username' name='username')
+          div.form-group
+            label(for='age') Age:
+            input#age.form-control(type='number', placeholder='age' name='age')
+          div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='email', placeholder='name@email.com' name='email')
+          div.form-group
+            label(for='address_street') Address Street:
+            input#address_street.form-control(type='text', placeholder='address_street' name='address_street')
+          div.form-group
+            label(for='address_suite') Address Suite:
+            input#address_suite.form-control(type='text', placeholder='address_suite' name='address_suite')
+          div.form-group
+            label(for='address_city') Address City:
+            input#address_city.form-control(type='text', placeholder='address_city' name='address_city')
+          div.form-group
+            label(for='address_zipcode') Address Zipcode:
+            input#address_zipcode.form-control(type='text', placeholder='address_zipcode' name='address_zipcode')
+          div.form-group
+            label(for='address_geo_lat') Address Geo Lat:
+            input#address_geo_lat.form-control(type='text', placeholder='address_geo_lat' name='address_geo_lat')
+          div.form-group
+            label(for='address_geo_lng') Address Geo Lng:
+            input#address_geo_lng.form-control(type='text', placeholder='address_geo_lng' name='address_geo_lng')
+          div.form-group
+            label(for='phone') Phone:
+            input#phone.form-control(type='text', placeholder='phone' name='phone')
+          div.form-group
+            label(for='website') Website:
+            input#website.form-control(type='text', placeholder='website' name='website')
+          div.form-group
+            label(for='company_name') Company Name:
+            input#company_name.form-control(type='text', placeholder='company_name' name='company_name')
+          div.form-group
+            label(for='company_catchphrase') Company Catchphrase:
+            input#company_catchphrase.form-control(type='text', placeholder='company_catchphrase' name='company_catchphrase')
+          div.form-group
+            label(for='company_bs') Company Bs:
+            input#company_bs.form-control(type='text', placeholder='company_bs' name='company_bs')
+          button.btn.btn-primary(type='submit') Submit
