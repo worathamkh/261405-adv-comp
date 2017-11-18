@@ -11,6 +11,8 @@ var jwt   = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
 var index = require('./routes/index');
 var user = require('./routes/user');
+var token = require('./routes/token');
+var authen = require('./routes/authen');
 
 var app = express();
 
@@ -32,8 +34,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // use morgan to log requests to the console
 // app.use(morgan('dev'));
 
+app.use('/api', token);
 app.use('/', index);
-app.use('/user', user);
+app.use('/api/user', user);
+app.use('/api/authen', authen);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,7 +54,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  // res.render('error');
 });
 
 module.exports = app;
